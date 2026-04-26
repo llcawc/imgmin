@@ -1,0 +1,59 @@
+{
+  "name": "imgmin",
+  "version": "0.1.0",
+  "description": "Image minification and optimization CLI tool with API",
+  "keywords": [
+    "avif",
+    "gif",
+    "image",
+    "jpg",
+    "minification",
+    "optimization",
+    "png",
+    "svg",
+    "webp"
+  ],
+  "license": "MIT",
+  "author": "pasmurno by llcawc",
+  "bin": {
+    "imgmin": "./bin/imgmin.js"
+  },
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node bin/imgmin.js --help",
+    "build": "tsdown",
+    "dev": "node --loader tsx dist/bin/imgmin.ts",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage",
+    "fmt": "oxfmt",
+    "check": "oxfmt --check",
+    "fix": "oxlint --fix",
+    "lint": "oxlint .",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist coverage .vitest"
+  },
+  "dependencies": {
+    "sharp": "^0.34.5",
+    "svgo": "^4.0.1",
+    "yargs": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/yargs": "^17.0.35",
+    "oxfmt": "^0.46.0",
+    "oxlint": "^1.61.0",
+    "tsdown": "^0.21.10",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.5"
+  },
+  "packageManager": "pnpm@10.33.2",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  }
+}

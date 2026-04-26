@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+*.log
+.DS_Store
+.env
+.env.local
+coverage/
+.nyc_output/
+tests/fixtures/output/
+out/
+public/
+.vitest/
+dist/
+*.tsbuildinfo
+.turbo/
