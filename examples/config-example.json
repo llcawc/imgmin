@@ -1,34 +1,39 @@
 {
-  "formats": {
-    "jpg": {
-      "quality": 80,
-      "progressive": true,
-      "removeMetadata": true
-    },
-    "png": {
-      "quality": 9,
-      "removeMetadata": true
-    },
-    "gif": {
-      "optimizationLevel": 3,
-      "removeMetadata": true
-    },
-    "svg": {
-      "minify": true
-    }
+  "jpg": {
+    "quality": 80,
+    "progressive": true,
+    "removeMetadata": true,
+    "chromaSubsampling": "4:2:0"
   },
-  "convertTo": {
-    "webp": {
-      "enabled": false,
-      "quality": 80
-    },
-    "avif": {
-      "enabled": false,
-      "quality": 60
-    }
+  "png": {
+    "compressionLevel": 9,
+    "progressive": false,
+    "removeMetadata": true
   },
-  "output": {
-    "preserveStructure": true,
-    "suffix": ""
-  }
+  "gif": {
+    "loop": 0,
+    "delay": 100,
+    "removeMetadata": true
+  },
+  "svg": {
+    "removeViewBox": false,
+    "removeMetadata": true,
+    "removeComments": true,
+    "removeDesc": true
+  },
+  "webp": {
+    "quality": 80,
+    "alphaQuality": 100,
+    "lossless": false
+  },
+  "avif": {
+    "quality": 60,
+    "lossless": false,
+    "effort": 9
+  },
+  "convertToWebp": false,
+  "convertToAvif": false,
+  "removeMetadata": true,
+  "workers": 1,
+  "verbose": false
 }

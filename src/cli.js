@@ -1,5 +1,5 @@
 import yargs from 'yargs'
-import { hideBin } from 'yargs/helpers'
+
 import logger from './utils/logger.js'
 
 /**
@@ -8,7 +8,7 @@ import logger from './utils/logger.js'
  * @returns {Promise<void>}
  */
 async function cli(args) {
-  const argv = yargs(hideBin(args))
+  const argv = await yargs(args)
     .option('input', {
       alias: 'i',
       describe: 'Input directory',
@@ -58,8 +58,7 @@ async function cli(args) {
     .help()
     .alias('help', 'h')
     .version()
-    .alias('version', 'V')
-    .parseSync()
+    .alias('version', 'V').argv
 
   if (argv.verbose) {
     logger.setVerbose(true)

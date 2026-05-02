@@ -53,11 +53,11 @@ pnpm start -- --input ./images --output ./dist --quality 80 --remove-metadata --
 ### API Usage
 
 ```javascript
-import { optimizeImages } from './src/index.js'
+import { optimizeImages } from "./src/index.js";
 
 const results = await optimizeImages({
-  inputDir: './images',
-  outputDir: './dist',
+  inputDir: "./images",
+  outputDir: "./dist",
   config: {
     formats: {
       jpg: { quality: 80, progressive: true },
@@ -67,9 +67,9 @@ const results = await optimizeImages({
       webp: { enabled: true, quality: 80 },
     },
   },
-})
+});
 
-console.log(results)
+console.log(results);
 ```
 
 ## Configuration
@@ -160,6 +160,7 @@ pnpm lint
 ## Architecture
 
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for detailed architecture documentation including:
+
 - Module decomposition
 - Data flow diagrams
 - Agent responsibilities

@@ -78,4 +78,8 @@ const logger: LoggerInterface = {
   setVerbose,
 }
 
-export { LogLevel, logger as default }
+export { LogLevel }
+
+export { logger }
+
+export default logger

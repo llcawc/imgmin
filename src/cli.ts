@@ -2,12 +2,12 @@
  * CLI module - парсинг аргументов и вызов API (TypeScript)
  */
 
-import type { CliOptions } from './types/index.js'
+import type { CliOptions } from './types/index.ts'
 
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
-import logger from './utils/logger.js'
+import logger from './utils/logger.ts'
 
 /**
  * CLI entry point - парсинг аргументов и вызов API

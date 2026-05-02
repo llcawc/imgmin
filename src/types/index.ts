@@ -26,13 +26,7 @@ export interface CliOptions {
   verbose?: boolean
 }
 
-export interface ImageFormat {
-  quality?: number
-  progressive?: boolean
-  removeMetadata?: boolean
-  optimizationLevel?: number
-  minify?: boolean
-}
-
-export type FormatName = 'jpg' | 'png' | 'gif' | 'svg'
-export type OutputFormat = 'webp' | 'avif'
+// Re-export config types
+export * from './config.ts'
+export * from './result.ts'
+export * from './optimizer.ts'

@@ -3,9 +3,9 @@
  * Main entry point for programmatic usage (TypeScript)
  */
 
-import type { ImageOptimizationResult, CliOptions } from './types/index.js'
+import type { ImageOptimizationResult, CliOptions } from './types/index.ts'
 
-import logger from './utils/logger.js'
+import logger from './utils/logger.ts'
 
 /**
  * Optimize images in a directory
@@ -27,10 +27,10 @@ export async function optimizeImages(options: Partial<CliOptions> = {}): Promise
       ratio: 0,
       format: 'unknown',
       time: 0,
-      status: 'pending',
+      status: 'skipped',
     },
   ]
 }
 
-export type { ImageOptimizationResult, CliOptions } from './types/index.js'
+export type { ImageOptimizationResult, CliOptions } from './types/index.ts'
 export default { optimizeImages }

@@ -21,23 +21,25 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "start": "node bin/imgmin.js --help",
-    "build": "tsdown",
-    "dev": "node --loader tsx dist/bin/imgmin.ts",
+    "start": "tsx bin/imgmin.ts --help",
+    "dev": "tsx watch bin/imgmin.ts",
+    "build": "tsdown src/index.ts --format esm --outDir dist",
+    "build:watch": "tsdown src/index.ts --format esm --outDir dist --watch",
     "test": "vitest --run",
     "test:watch": "vitest",
     "test:coverage": "vitest --coverage",
-    "fmt": "oxfmt",
-    "check": "oxfmt --check",
-    "fix": "oxlint --fix",
     "lint": "oxlint .",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt --write .",
+    "fmt:check": "oxfmt --check .",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist coverage .vitest"
   },
   "dependencies": {
     "sharp": "^0.34.5",
     "svgo": "^4.0.1",
-    "yargs": "^18.0.0"
+    "yargs": "^18.0.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
