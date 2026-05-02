@@ -1,45 +1,90 @@
 {
   "name": "imgmin",
   "version": "0.1.0",
-  "description": "Image minification and optimization CLI tool with API",
+  "description": "Production-ready image optimization CLI tool with API support for Node.js. Optimize JPG, PNG, GIF, SVG, WebP, and AVIF with 40%+ size reduction.",
   "keywords": [
+    "api",
     "avif",
+    "batch",
+    "cli",
+    "compress",
     "gif",
     "image",
+    "jpeg",
     "jpg",
+    "lossless",
+    "lossy",
     "minification",
     "optimization",
     "png",
+    "progressive",
     "svg",
     "webp"
   ],
+  "homepage": "https://github.com/yourusername/imgmin#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/imgmin/issues"
+  },
   "license": "MIT",
-  "author": "pasmurno by llcawc",
+  "author": {
+    "name": "pasmurno",
+    "url": "https://github.com/yourusername"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/imgmin.git"
+  },
   "bin": {
     "imgmin": "./bin/imgmin.js"
   },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "CHANGELOG.md",
+    "API.md",
+    "LICENSE"
+  ],
   "type": "module",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./processor": {
+      "import": "./dist/processor/processor.js",
+      "types": "./dist/processor/processor.d.ts"
+    },
+    "./cli": {
+      "import": "./dist/cli.js",
+      "types": "./dist/cli.d.ts"
+    }
+  },
   "scripts": {
-    "start": "tsx bin/imgmin.ts --help",
+    "start": "tsx bin/imgmin.ts",
     "dev": "tsx watch bin/imgmin.ts",
     "build": "tsdown src/index.ts --format esm --outDir dist",
     "build:watch": "tsdown src/index.ts --format esm --outDir dist --watch",
     "test": "vitest --run",
     "test:watch": "vitest",
     "test:coverage": "vitest --coverage",
+    "test:e2e": "vitest --run tests/e2e",
     "lint": "oxlint .",
-    "lint:fix": "oxlint --fix",
+    "lint:fix": "oxlint --fix .",
     "fmt": "oxfmt --write .",
     "fmt:check": "oxfmt --check .",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist coverage .vitest"
+    "clean": "rm -rf dist coverage .vitest",
+    "prepublishOnly": "pnpm test && pnpm build",
+    "prepare": "pnpm build"
   },
   "dependencies": {
     "sharp": "^0.34.5",
     "svgo": "^4.0.1",
     "yargs": "^18.0.0",
-    "zod": "^3.22.4"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
@@ -50,6 +95,9 @@
     "tsx": "^4.21.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "packageManager": "pnpm@10.33.2",
   "pnpm": {
